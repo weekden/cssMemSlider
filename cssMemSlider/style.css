@@ -2,24 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
-    position: relative;
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slider {
-    max-width: 900px;
-    max-height: 550px;
+    max-width: 100rem;
+    max-height: 70rem;
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: auto;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     background-color: darkgrey;
+    padding-top: 5%;
 }
 
 .slider-wrapper {
@@ -29,20 +37,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
-.slider-wrapper > input {
-    position: relative;
-    display: flex;
-    top: -50px
+.slider-wrapper > input[type=radio] {
+    display: none ;
+}
+
+.slides-wrapper {
+    width: 80%;
+    overflow: hidden;
 }
 
 .slides {
-    width: 80%;
-    border: 1px solid black;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
+    width: 400%;
+    transition: 0.2s ease-in-out;
+    display: flex;
 }
 
 .bottom-title {
@@ -54,9 +64,6 @@ body {
 .slide {
     width: 100%;
     height: 100%;
-    position: absolute;
-    right: -100%;
-   
 }
 
 .slide img {
@@ -67,29 +74,19 @@ body {
 
 
 
-#slide1:checked ~ .slides > .slide1 {
-    right: 0;
-    transition: 0.2s ease-in-out;
+#slide1:checked ~ .slides-wrapper .slides {
+    transform: translateX(0);
 }
 
-#slide2:checked ~ .slides > .slide2 {
-    right: 0;
-    transition: 0.2s ease-in-out;
+#slide2:checked ~ .slides-wrapper > .slides {
+    transform: translateX(-25%);
 }
 
-#slide3:checked ~ .slides > .slide3 {
-    right: 0;
-    transition: 0.2s ease-in-out;
+#slide3:checked ~ .slides-wrapper .slides {
+    transform: translateX(-50%);
 }
 
-#slide4:checked ~ .slides > .slide4 {
-    right: 0;
-    transition: 0.2s ease-in-out;
+#slide4:checked ~ .slides-wrapper .slides {
+    transform: translateX(-75%);
 }
-
-
-
-
-
-
 
