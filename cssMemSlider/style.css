@@ -83,7 +83,7 @@ body {
 
 .text {
     flex: 0 0 100%;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     transition: transform 0.5s ease-in-out;
 }
@@ -95,15 +95,16 @@ body {
     align-items: center;
 }
 
-.control-wrapper {
-    padding: 1rem 0; 
+.controls label {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0.5rem 0;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.controls label {
+.circle-border {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
@@ -116,18 +117,19 @@ body {
 }
 
 .circle {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-color: #d5ff2c;
     transition: background-color 0.3s ease;
 }
 
-.control-wrapper:hover .circle {
-    background-color: #ffffff;
+.controls label:hover .circle {
+
+    background-color:  #ffffff;
 }
 
-.control-wrapper:hover label {
+.controls label:hover .circle-border {
     border-color:  #ffffff;
 }
 
@@ -153,34 +155,20 @@ body {
     transform: translateX(-300%);
 }
 
-#slide1:checked ~ .bottom-container .controls label[for="slide1"] .circle {
+#slide1:checked ~ .bottom-container .controls label[for="slide1"] .circle,
+#slide2:checked ~ .bottom-container .controls label[for="slide2"] .circle,
+#slide3:checked ~ .bottom-container .controls label[for="slide3"] .circle,
+#slide4:checked ~ .bottom-container .controls label[for="slide4"] .circle
+{
     background-color: transparent;
 }
 
-#slide2:checked ~ .bottom-container .controls label[for="slide2"] .circle {
-    background-color: transparent;
-}
-
-#slide3:checked ~ .bottom-container .controls label[for="slide3"] .circle {
-    background-color: transparent;
-}
-
-#slide4:checked ~ .bottom-container .controls label[for="slide4"] .circle {
-    background-color: transparent;
-}
-
-#slide1:checked ~ .bottom-container .controls label[for="slide1"] {
+#slide1:checked ~ .bottom-container .controls label[for="slide1"],
+#slide2:checked ~ .bottom-container .controls label[for="slide2"],
+#slide3:checked ~ .bottom-container .controls label[for="slide3"],
+#slide4:checked ~ .bottom-container .controls label[for="slide4"]
+ {
     border-color: #ffffff;
 }
 
-#slide2:checked ~ .bottom-container .controls label[for="slide2"] {
-    border-color: #ffffff;
-}
 
-#slide3:checked ~ .bottom-container .controls label[for="slide3"] {
-    border-color: #ffffff;
-}
-
-#slide4:checked ~ .bottom-container .controls label[for="slide4"] {
-    border-color: #ffffff;
-}
