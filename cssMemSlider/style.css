@@ -56,23 +56,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     margin: 1rem 0;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    border-radius: 1rem;
 }
 
 .bottom-container {
     width: 100%;
-    height: 6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 3%;
 }
 
 .text-container {
@@ -83,9 +83,10 @@ body {
 
 .text {
     flex: 0 0 100%;
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    transition: transform 0.5s ease-in-out;
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
 }
 
 .controls {
@@ -99,9 +100,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.8rem 0;
     cursor: pointer;
-    transition: 0.3s ease;
 }
 
 .circle-border {
@@ -125,13 +125,22 @@ body {
 }
 
 .controls label:hover .circle {
-
     background-color:  #ffffff;
 }
 
 .controls label:hover .circle-border {
     border-color:  #ffffff;
 }
+
+.controls label:active .circle {
+    background-color:  #737373;
+}
+
+.controls label:active .circle-border {
+    border-color:  #737373;
+}
+
+
 
 
 #slide1:checked ~ .img-container .slide,
@@ -169,6 +178,18 @@ body {
 #slide4:checked ~ .bottom-container .controls label[for="slide4"]
  {
     border-color: #ffffff;
+}
+
+@media(max-width: 700px) {
+    .bottom-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        row-gap: 1.5rem;
+    }
+
+    html {
+        font-size: 55%;
+    }
 }
 
 
