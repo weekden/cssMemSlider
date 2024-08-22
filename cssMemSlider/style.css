@@ -56,21 +56,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
-    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+    margin: 1rem 0;
+    transition: transform 0.5s ease-in-out;
 }
 
 .img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
 .bottom-container {
     width: 100%;
+    height: 6rem;
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    align-items: center;
 }
 
 .text-container {
@@ -83,21 +85,50 @@ body {
     flex: 0 0 100%;
     font-size: 2rem;
     font-weight: bold;
+    transition: transform 0.5s ease-in-out;
 }
 
 .controls {
-    width: 10rem;
+    width: 12rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.control-wrapper {
+    padding: 1rem 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .controls label {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
-    background-color: #ffffff;
+    border: 0.1rem solid rgb(213, 255, 44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.circle {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background-color: #d5ff2c;
     transition: background-color 0.3s ease;
+}
+
+.control-wrapper:hover .circle {
+    background-color: #ffffff;
+}
+
+.control-wrapper:hover label {
+    border-color:  #ffffff;
 }
 
 
@@ -122,4 +153,34 @@ body {
     transform: translateX(-300%);
 }
 
+#slide1:checked ~ .bottom-container .controls label[for="slide1"] .circle {
+    background-color: transparent;
+}
 
+#slide2:checked ~ .bottom-container .controls label[for="slide2"] .circle {
+    background-color: transparent;
+}
+
+#slide3:checked ~ .bottom-container .controls label[for="slide3"] .circle {
+    background-color: transparent;
+}
+
+#slide4:checked ~ .bottom-container .controls label[for="slide4"] .circle {
+    background-color: transparent;
+}
+
+#slide1:checked ~ .bottom-container .controls label[for="slide1"] {
+    border-color: #ffffff;
+}
+
+#slide2:checked ~ .bottom-container .controls label[for="slide2"] {
+    border-color: #ffffff;
+}
+
+#slide3:checked ~ .bottom-container .controls label[for="slide3"] {
+    border-color: #ffffff;
+}
+
+#slide4:checked ~ .bottom-container .controls label[for="slide4"] {
+    border-color: #ffffff;
+}
